@@ -40,7 +40,7 @@ namespace z15
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-
+            
             // Nie powtarzaj inicjowania aplikacji, gdy w oknie znajduje się już zawartość,
             // upewnij się tylko, że okno jest aktywne
             if (rootFrame == null)
@@ -49,11 +49,6 @@ namespace z15
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
-
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-                {
-                    //TODO: Załaduj stan z wstrzymanej wcześniej aplikacji
-                }
 
                 // Umieść ramkę w bieżącym oknie
                 Window.Current.Content = rootFrame;
@@ -93,7 +88,6 @@ namespace z15
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Zapisz stan aplikacji i zatrzymaj wszelkie aktywności w tle
             deferral.Complete();
         }
     }

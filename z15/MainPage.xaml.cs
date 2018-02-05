@@ -27,21 +27,23 @@ namespace z15
         public MainPage()
         {
             this.InitializeComponent();
-            using (var conn = new MySqlConnection("server=TWOJ_ADRES_HOSTA;database=TWOJA_BAZA_DANYCH;uid=TWOJ_USER;pwd=TWOJE_HASLO")) //łączenie z bazą danych
-  //        using (var conn = new MySqlConnection("server=kdkj.nazwa.pl;database=ZTP;uid=odczyt;pwd=12345678")) //łączenie z bazą danych
+            
+            //using (var conn = new MySqlConnection("server=ADRES_HOSTA;Port=3306;database=BAZA_DANYCH;uid=USER_Database;pwd=Haslo"))
+            using (var conn = new MySqlConnection("server=127.0.0.1;Port=3306;database=programowanie;uid=root")) //connect
             {
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-                Encoding.GetEncoding("latin2");
-                conn.Open(); //otwarcie połączenia z bazą
-                int i = 1;
-                while (i < 4)
+                Encoding.GetEncoding("utf-8");
+                conn.Open(); //open database
+                int i = 0;
+                while (i < 5)
                 {
-                    var cmd = new MySqlCommand("SELECT nazwisko FROM pracownik WHERE id='"+i+"';", conn);
+                    var cmd = new MySqlCommand("SELECT nazwisko FROM pracownik WHERE id_pracownik='"+i+"';", conn);
                     string nazwisko = Convert.ToString(cmd.ExecuteScalar());
-                    PoleTekstowe.Text += "Nazwisko: "+nazwisko+"\n";
+
+                    nazwiska.Text += i + ": " + nazwisko + "\n";
                     i++;
                 }
-                conn.Close(); //zamykanie połączenia z bazą
+                conn.Close(); //close database
             }
         }
     }

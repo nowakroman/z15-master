@@ -8,8 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,10,10">
-        <TextBlock HorizontalAlignment="Left" Margin="224,0,0,0" TextWrapping="Wrap" Text="Pracownicy" VerticalAlignment="Top" FontSize="72" FontWeight="Bold" RenderTransformOrigin="0.338,0.349"/>
-        <TextBlock x:Name="PoleTekstowe" HorizontalAlignment="Left" Height="479" Margin="10,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="770"/>
-
+        <TextBlock HorizontalAlignment="Left" Margin="150,10,0,0" TextWrapping="Wrap" Text="Pracownik:" VerticalAlignment="Top" FontSize="55" FontWeight="Bold" FontStyle="Italic" Foreground="Coral" RenderTransformOrigin="0.338,0.349"/>
+        <TextBlock x:Name="nazwiska" HorizontalAlignment="Left" Height="450" Margin="85,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="720"/>
     </Grid>
 </Page>
